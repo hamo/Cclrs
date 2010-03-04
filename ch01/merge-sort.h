@@ -8,8 +8,12 @@
  * version 2.1 of the License, or (at your option) any later version.
  */
 
-int mergesort(long * p,long n1,long n2);
+int mergesort(long * p,long n1,long n2,int (*compare)(long,long));
 /* merge-sort function. p pointer should be the name of the array ,n1 is the first element number to sort and n2 should be the last element number to sort. */
 
-int merge(long * p,long n1,long n2,long n3);
+int merge(long * p,long n1,long n2,long n3,int (*compare)(long,long));
 /* merge two arrays,the first array is from n1 to n2,the second is from n2 to n3.used by function mergesort. */
+
+int mt(long a,long b);  //more than
+
+int lt(long a,long b);  //less than
