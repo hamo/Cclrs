@@ -8,5 +8,9 @@
  * version 2.1 of the License, or (at your option) any later version.
  */
 
-int insertionsort(long * p,long length);
-/* insertion-sort function. p pointer should be pointed to the first element of the array and length should be the length of the array. */
+int insertionsort(long * p,long length,int (*compare)(long,long));
+/* insertion-sort function. p pointer should be pointed to the first element of the array and length should be the length of the array,compare function return TRUE when that two numbers are order-right. */
+
+int mt(long a,long b);  //more than
+
+int lt(long a,long b);  //less than

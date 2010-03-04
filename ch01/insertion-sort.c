@@ -12,17 +12,25 @@
 #include "../common.h"
 #include "insertion-sort.h"
 
-int insertionsort(long * p,long length){
+int insertionsort(long * p,long length,int (*compare)(long,long)){
     long *out;
     long *in;
     for(out = p+1;out < p+length;out++){
         long key = *(out);
-        in = out -1;
-        while(in >= p && *in > key){
+        in = out - 1;
+        while(in >= p && !(*compare)((*in),key)){
             *(in +1)=*(in);
             in--;
         }
-        *(in + 1)=key;
+        *(in + 1) = key;
     }
 	return SUCCESS;
+}
+
+int mt(long a,long b){
+    return (a > b) ? TRUE : FALSE;
+}
+
+int lt(long a,long b){
+    return (a < b) ? TRUE : FALSE;
 }
