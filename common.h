@@ -8,9 +8,20 @@
  * version 2.1 of the License, or (at your option) any later version.
  */
 
-#ifndef LOGIC
-#define LOGIC
+#ifndef RETURN_VALUE
+#define RETURN_VALUE
 #define SUCCESS 0
-#define ERR -1
-#define OK 0
+#endif
+
+#ifndef BOOL
+#define BOOL
+#define TRUE 1
+#define FALSE 0
+#endif
+
+#ifndef ERRCODE
+#define ERRCODE
+int errcode=0;
+#define NOERR 0
+#define ALLOCMEM -1
 #endif
