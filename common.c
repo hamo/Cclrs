@@ -7,23 +7,13 @@
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
  */
+#include <stdio.h>
+#include <stdlib.h>
+#include "common.h"
 
-#ifndef RETURN_VALUE
-#define RETURN_VALUE
-#define SUCCESS 0
-#define FAILURE 1
-#endif
-
-#ifndef BOOL
-#define BOOL
-#define TRUE 1
-#define FALSE 0
-#endif
-
-#ifndef ERRCODE
-#define ERRCODE
-#define NOERR 0
-#define ALLOCMEM -1
-#endif
-
-int err(int);  // deal with some errors
+int err(int errcode){  // deal with some errors
+    switch(errcode) {
+        case ALLOCMEM: fprintf(stderr,"ALLOC MEMORY ERROR!EXIT!\n");
+                       exit(-1);
+    }
+}

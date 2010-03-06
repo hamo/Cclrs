@@ -22,8 +22,7 @@ int merge(long *p,long n1,long n2,long n3,int (*compare)(long,long)){
     p1 = malloc((number1+1)*sizeof(long));
     p2 = malloc((number2+1)*sizeof(long));
     if (p1 == NULL || p2 == NULL){
-        errcode = -1;
-        goto err;
+       err(ALLOCMEM);
     }
     for (i = 0;i < number1;i++){
         p1[i] = p[n1 + i];
@@ -56,11 +55,6 @@ int merge(long *p,long n1,long n2,long n3,int (*compare)(long,long)){
     free(p1);
     free(p2);
     return SUCCESS;
-
-err:switch(errcode) {
-        case ALLOCMEM: fprintf(stderr,"ALLOC MEMORY ERROR!EXIT!\n");
-                       exit(-1);
-    }
 }
 
 int mergesort(long * p,long n1,long n3,int (*compare)(long,long)){
