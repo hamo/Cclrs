@@ -24,6 +24,7 @@
 #define ERRCODE
 #define NOERR 0
 #define ALLOCMEM -1
+#define INPUTERR -2
 #endif
 
 int err(int);  // deal with some errors

@@ -15,5 +15,7 @@ int err(int errcode){  // deal with some errors
     switch(errcode) {
         case ALLOCMEM: fprintf(stderr,"ALLOC MEMORY ERROR!EXIT!\n");
                        exit(-1);
+        case INPUTERR: fprintf(stderr,"INPUT ERR.EXIT!\n");
+                       exit(-1);
     }
 }
