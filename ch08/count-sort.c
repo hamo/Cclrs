@@ -37,6 +37,8 @@ int countsort(long * p,long from,long to){
             }
         }
     }
+    free(tmp);
+    return SUCCESS;
 }
 
 long maxone(long * p,long from,long to){
